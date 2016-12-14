@@ -121,13 +121,29 @@ namespace CSharp_Objects
             // Arrays();
             // JaggedArrays();
 
-            List<int> array = MathHelpers.GetPowersOf2(4);
+
+            /* List<int> array = MathHelpers.GetPowersOf2(4);
 
             foreach(int i in array)
             {
                 Console.WriteLine(i);
+            } */
+
+            List<Student> students = new List<Student>
+            {
+                new Student() { Name = "Sally", GradeLevel = 3},
+                new Student() { Name = "Bob", GradeLevel = 3},
+                new Student() { Name = "Sally", GradeLevel = 2}
+            };
+
+
+            students.Sort();
+
+            foreach (Student student in students)
+            {
+                Console.WriteLine($"{student.Name} is in grade {student.GradeLevel}");
             }
-           
+
             Console.ReadKey();
 
         }
