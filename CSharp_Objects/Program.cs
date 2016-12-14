@@ -28,6 +28,18 @@ namespace CSharp_Objects
 
             return temptable;
         }
+
+        public static List<int> GetPowersOf2(int start)
+        {
+            List<int> temp = new List<int>();
+
+            for(Double i = 0; i <= start; i++)
+            {
+                temp.Add((int)Math.Pow(2, i));
+            }
+            return temp;
+        }
+
     }
 
     class Cell
@@ -37,7 +49,34 @@ namespace CSharp_Objects
 
     class Program
     {
+        public static void Lists()
+        {
+            //List<string> students = new List<string>(500);
+            //Console.Write(students.Count);
+            //Console.Write(students.Capacity);
+            //students.Add("Mary");
+            //students.Add("Brian");
 
+            // List<string> students = new List<string>(5) { "Mary", "Sue", "Allen", "Bill", "Beth" };
+
+            List<string> students = new List<string>() { "Mary", "Sue", "Allen", "Bill", "Beth" };
+            List<string> students2 = new List<string>(students);
+
+            string[] studentArray = students.ToArray();
+
+            foreach(string student in students)
+            {
+
+
+            }
+
+            students.Add("Frank");
+
+            students.Remove("Beth");
+
+
+        }
+       
         public static void Arrays()
         {
             // Different Methods for initializing array
@@ -82,6 +121,13 @@ namespace CSharp_Objects
             // Arrays();
             // JaggedArrays();
 
+            List<int> array = MathHelpers.GetPowersOf2(4);
+
+            foreach(int i in array)
+            {
+                Console.WriteLine(i);
+            }
+           
             Console.ReadKey();
 
         }
